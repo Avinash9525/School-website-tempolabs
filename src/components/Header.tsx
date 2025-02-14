@@ -24,6 +24,14 @@ const Header = ({
   logo = "DHI Classes",
   menuItems = [
     {
+      label: "Simulation",
+      href: "/simulation",
+    },
+    {
+      label: "Kids Game",
+      href: "/game",
+    },
+    {
       label: "Courses",
       href: "#courses",
       subItems: [
@@ -77,7 +85,7 @@ const Header = ({
         <div className="text-2xl font-bold text-primary">{logo}</div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center flex-1 justify-center">
+        <div className="hidden lg:flex items-center flex-1 justify-center">
           <NavigationMenu>
             <NavigationMenuList>
               {menuItems.map((item) => (
@@ -123,7 +131,7 @@ const Header = ({
         </div>
 
         {/* Right side buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <Button onClick={onContactClick} variant="ghost">
             Contact Us
           </Button>
@@ -142,7 +150,7 @@ const Header = ({
         <Button
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="lg:hidden"
           ref={menuButtonRef}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -158,7 +166,7 @@ const Header = ({
       {isMobileMenuOpen && (
         <div
           ref={mobileMenuRef}
-          className="md:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-200 shadow-lg"
+          className="lg:hidden absolute top-20 left-0 right-0 bg-white border-b border-gray-200 shadow-lg"
         >
           <nav className="container mx-auto px-4 py-4">
             <ul className="space-y-4">
