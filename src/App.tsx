@@ -22,12 +22,12 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/admission" element={<AdmissionForm />} />
-          <Route path="/student" element={<StudentDashboard />} />
-          <Route path="/simulation" element={<CarSimulation />} />
-          <Route path="/game" element={<VegetableGame />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="signup" element={<SignupPage />} />
+          <Route path="admission" element={<AdmissionForm />} />
+          <Route path="student" element={<StudentDashboard />} />
+          <Route path="simulation" element={<CarSimulation />} />
+          <Route path="game" element={<VegetableGame />} />
         </Routes>
       </Suspense>
     </div>
