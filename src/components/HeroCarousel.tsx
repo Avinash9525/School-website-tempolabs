@@ -1,5 +1,5 @@
 import React from "react";
-import Autoplay from "embla-carousel-autoplay";
+import AutoplayPlugin from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -56,15 +56,15 @@ const HeroCarousel = ({
   return (
     <Carousel
       className="w-full h-[600px] relative"
+      plugins={[
+        AutoplayPlugin({
+          delay: 5000,
+          stopOnInteraction: false,
+        }),
+      ]}
       opts={{
         align: "start",
         loop: true,
-        plugins: [
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: false,
-          }),
-        ],
       }}
     >
       <CarouselContent>

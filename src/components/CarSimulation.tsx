@@ -15,6 +15,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { ChartOptions } from "chart.js";
 
 // Register ChartJS components
 ChartJS.register(
@@ -106,9 +107,12 @@ const CarSimulation: React.FC = () => {
     ],
   };
 
-  const chartOptions = {
+  const chartOptions: ChartOptions<"line"> = {
+    maintainAspectRatio: false,
     responsive: true,
-    animation: false,
+    animation: {
+      duration: 0,
+    },
     interaction: {
       intersect: false,
       mode: "index" as const,
