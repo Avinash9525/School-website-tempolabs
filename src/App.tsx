@@ -1,12 +1,14 @@
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/home";
-import LoginPage from "./components/auth/LoginPage";
-import SignupPage from "./components/auth/SignupPage";
-import AdmissionForm from "./components/AdmissionForm";
-import StudentDashboard from "./components/StudentDashboard";
-import CarSimulation from "./components/CarSimulation";
-import VegetableGame from "./components/VegetableGame";
+
+// Lazy load components
+const Home = lazy(() => import("./components/home"));
+const LoginPage = lazy(() => import("./components/auth/LoginPage"));
+const SignupPage = lazy(() => import("./components/auth/SignupPage"));
+const AdmissionForm = lazy(() => import("./components/AdmissionForm"));
+const StudentDashboard = lazy(() => import("./components/StudentDashboard"));
+const CarSimulation = lazy(() => import("./components/CarSimulation"));
+const VegetableGame = lazy(() => import("./components/VegetableGame"));
 
 function App() {
   return (

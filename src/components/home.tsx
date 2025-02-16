@@ -1,10 +1,12 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Header from "./Header";
-import HeroCarousel from "./HeroCarousel";
-import CourseSection from "./CourseSection";
-import StatsSection from "./StatsSection";
-import TestimonialsSection from "./TestimonialsSection";
-import ContactSection from "./ContactSection";
+
+// Lazy load components
+const HeroCarousel = lazy(() => import("./HeroCarousel"));
+const CourseSection = lazy(() => import("./CourseSection"));
+const StatsSection = lazy(() => import("./StatsSection"));
+const TestimonialsSection = lazy(() => import("./TestimonialsSection"));
+const ContactSection = lazy(() => import("./ContactSection"));
 
 interface HomePageProps {
   headerProps?: React.ComponentProps<typeof Header>;
@@ -27,11 +29,19 @@ const HomePage = ({
     <div className="min-h-screen bg-background">
       <Header {...headerProps} />
       <main className="pt-20">
-        <HeroCarousel {...heroProps} />
-        <CourseSection {...courseProps} />
-        <StatsSection {...statsProps} />
-        <TestimonialsSection {...testimonialsProps} />
-        <ContactSection {...contactProps} />
+        <Suspense
+          fallback={
+            <div className="min-h-[600px] flex items-center justify-center">
+              Loading...
+            </div>
+          }
+        >
+          <HeroCarousel {...heroProps} />
+          <CourseSection {...courseProps} />
+          <StatsSection {...statsProps} />
+          <TestimonialsSection {...testimonialsProps} />
+          <ContactSection {...contactProps} />
+        </Suspense>
       </main>
     </div>
   );
