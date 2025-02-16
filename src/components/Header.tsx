@@ -26,11 +26,11 @@ const Header = ({
   menuItems = [
     {
       label: "Simulation",
-      href: "simulation",
+      href: "/simulation",
     },
     {
       label: "Kids Game",
-      href: "game",
+      href: "/game",
     },
     {
       label: "Courses",
@@ -150,13 +150,13 @@ const Header = ({
           <Button onClick={onContactClick} variant="ghost">
             Contact Us
           </Button>
-          <Button variant="ghost" onClick={() => navigate("admission")}>
+          <Button variant="ghost" onClick={() => navigate("/admission")}>
             Admission
           </Button>
-          <Button variant="outline" onClick={() => navigate("login")}>
+          <Button variant="outline" onClick={() => navigate("/login")}>
             Log in
           </Button>
-          <Button onClick={() => navigate("signup")}>Sign up</Button>
+          <Button onClick={() => navigate("/signup")}>Sign up</Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -227,7 +227,7 @@ const Header = ({
                 variant="ghost"
                 className="w-full justify-start"
                 onClick={() => {
-                  navigate("admission");
+                  navigate("/admission");
                   setIsMobileMenuOpen(false);
                 }}
               >
@@ -237,7 +237,7 @@ const Header = ({
                 variant="ghost"
                 className="w-full justify-start"
                 onClick={() => {
-                  navigate("login");
+                  navigate("/login");
                   setIsMobileMenuOpen(false);
                 }}
               >
@@ -246,7 +246,7 @@ const Header = ({
               <Button
                 className="w-full justify-start"
                 onClick={() => {
-                  navigate("signup");
+                  navigate("/signup");
                   setIsMobileMenuOpen(false);
                 }}
               >
